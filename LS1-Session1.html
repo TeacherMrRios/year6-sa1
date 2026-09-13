@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Year 6 Science · What is matter?</title>
+<style>
+:root{--s:1;--g:#075a38;--g2:#16804e;--ink:#173328;--card:#fffdf8}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;color:var(--ink);background:linear-gradient(135deg,#06482f,#178653);font-size:calc(18px*var(--s));min-height:100vh}
+.bg{position:fixed;inset:0;overflow:hidden;pointer-events:none}.leaf{position:absolute;top:-15%;opacity:.18;font-size:2.4rem;animation:fall 16s linear infinite}@keyframes fall{to{transform:translate(15vw,120vh) rotate(400deg)}}
+main{position:relative;max-width:1150px;margin:auto;padding:18px}.top{position:sticky;top:0;z-index:5;background:#fffffff0;border:3px solid #8bd1a6;border-radius:20px;padding:12px 16px;display:flex;justify-content:space-between;gap:10px;align-items:center;box-shadow:0 8px 24px #002b1c55}
+.controls{display:flex;gap:7px;flex-wrap:wrap}button{font:inherit;font-weight:800;border:0;border-radius:13px;padding:.55em .8em;cursor:pointer}.ctl{background:#e4f5e9;color:#124b31}
+.card{background:var(--card);border:3px solid #b8dec5;border-radius:25px;padding:25px;margin:18px 0;box-shadow:0 12px 28px #002b1d45}.hero{text-align:center;background:linear-gradient(135deg,#fff,#eaffef)}
+h1{font-size:2.4em;color:#075536;margin:.15em}h2{font-size:1.55em;color:#096a42}.def{background:#fff4b8;border-left:8px solid #efbf20;padding:17px;border-radius:17px;font-size:1.15em}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.tile{padding:18px;border-radius:19px;border:2px solid #c8ddcf;background:#fff}.blue{background:#e1f3ff}.orange{background:#fff0dc}.pink{background:#ffe7ef}.purple{background:#eee8ff}.icon{font-size:2.5em;display:block}
+.chain{display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap;margin:20px}.bubble{padding:13px 18px;border-radius:40px;background:#e7f7eb;border:3px solid #66b77f;font-weight:900}.arrow{font-size:2em;color:#ef8c27}
+.challenge{border:4px dashed #ee9e1b;background:#fffaf0}.level{display:inline-block;background:#dff3c9;border-radius:18px;padding:6px 12px;font-weight:900}.answers{display:grid;grid-template-columns:1fr 1fr;gap:10px}.answer{background:white;border:3px solid #bdd7c6;text-align:left;color:#173328}.correct{background:#d8f7df!important;border-color:#38a65a!important}.wrong{background:#ffe0e0!important;border-color:#dd5555!important}.feedback{min-height:1.5em;font-weight:900;margin-top:10px}
+.progress{height:15px;background:#dce8df;border-radius:15px;overflow:hidden}.bar{height:100%;width:0;background:#50b86d;transition:.3s}.hidden{display:none!important}.small{--s:.78}.medium{--s:1}.large{--s:1.42}.footer{text-align:center;color:white;font-weight:bold;padding:15px}
+
+.navbar{
+  position:sticky;top:82px;z-index:4;
+  display:flex;gap:8px;overflow-x:auto;
+  background:#0a5035ee;padding:9px 11px;margin:10px 0 16px;
+  border-radius:18px;border:2px solid #8bd1a6;
+  box-shadow:0 7px 18px #002b1c44;
+  scrollbar-width:thin;
+}
+.navbar button{
+  flex:0 0 auto;background:#fff;color:#075536;
+  border:2px solid #b8dec5;padding:.48em .72em;
+  white-space:nowrap;font-size:.82em;
+}
+.navbar button:hover{background:#dff3c9}
+section[id]{scroll-margin-top:155px}
+@media(max-width:750px){.grid,.answers{grid-template-columns:1fr}.large{--s:1.15}.top{position:relative}}
+</style></head>
+<body class="medium">
+<div class="bg"><span class="leaf" style="left:5%">🍃</span><span class="leaf" style="left:24%;animation-delay:-6s">🌿</span><span class="leaf" style="left:48%;animation-delay:-10s">🍃</span><span class="leaf" style="left:70%;animation-delay:-3s">🌱</span><span class="leaf" style="left:90%;animation-delay:-8s">🍃</span></div>
+<main>
+<header class="top"><b>🌿 YEAR 6 · NATURAL SCIENCE · Mr. Ríos</b><div class="controls"><button class="ctl" onclick="lang('en')">🇬🇧 English</button><button class="ctl" onclick="lang('es')">🇪🇸 Español</button><button class="ctl" onclick="size('small')">A−</button><button class="ctl" onclick="size('medium')">A</button><button class="ctl" onclick="size('large')">A+</button></div></header>
+<nav class="navbar">
+ <button onclick="go('intro')">🏠 <span class="en">Start</span><span class="es hidden">Inicio</span></button>
+ <button onclick="go('matter')">🔎 <span class="en">Matter</span><span class="es hidden">Materia</span></button>
+ <button onclick="go('atoms')">⚛️ <span class="en">Atoms</span><span class="es hidden">Átomos</span></button>
+ <button onclick="go('substances')">🧪 <span class="en">Substances</span><span class="es hidden">Sustancias</span></button>
+ <button onclick="go('mass')">⚖️ <span class="en">Mass & Volume</span><span class="es hidden">Masa y volumen</span></button>
+ <button onclick="go('gravity')">🌍 <span class="en">Weight</span><span class="es hidden">Peso</span></button>
+ <button onclick="go('final')">🏆 <span class="en">Final Mission</span><span class="es hidden">Reto final</span></button>
+</nav>
+
+
+<section class="card hero" id="intro"><div style="font-size:4em">🧪🔬⚛️</div><div class="en"><span class="level">SESSION 1</span><h1>What is matter?</h1><p><b>Look around you… What is made of matter? 👀</b></p><p>Today we will discover what matter is, what it is made of and how we describe it.</p></div><div class="es hidden"><span class="level">SESIÓN 1</span><h1>¿Qué es la materia?</h1><p><b>Mira a tu alrededor… ¿Qué está hecho de materia? 👀</b></p><p>Hoy descubriremos qué es la materia, de qué está formada y cómo la describimos.</p></div></section>
+
+<section class="card" id="matter"><div class="en"><h2>🔎 1. Matter is everywhere!</h2><div class="def"><b>Matter</b> is everything that has <b>mass</b> and occupies <b>space</b>.</div><p>Air all around us is matter. Things we can see, like a table, and things we can drink, like orange juice, are matter too.</p></div><div class="es hidden"><h2>🔎 1. ¡La materia está en todas partes!</h2><div class="def">La <b>materia</b> es todo aquello que tiene <b>masa</b> y ocupa un <b>espacio</b>.</div><p>El aire que nos rodea es materia. Una mesa y el zumo de naranja también son materia.</p></div><div class="grid"><div class="tile blue"><span class="icon">💨</span><b class="en">Air</b><b class="es hidden">Aire</b></div><div class="tile orange"><span class="icon">🧃</span><b class="en">Orange juice</b><b class="es hidden">Zumo de naranja</b></div><div class="tile pink"><span class="icon">🪑</span><b class="en">A table</b><b class="es hidden">Una mesa</b></div><div class="tile purple"><span class="icon">💧</span><b class="en">Water</b><b class="es hidden">Agua</b></div></div></section>
+
+<section class="card" id="atoms"><div class="en"><h2>⚛️ 2. Tiny building blocks</h2><p>Matter is made up of tiny particles called <b>atoms</b>. Atoms join together to form <b>molecules</b>.</p></div><div class="es hidden"><h2>⚛️ 2. Pequeños bloques</h2><p>La materia está formada por partículas diminutas llamadas <b>átomos</b>. Los átomos se unen para formar <b>moléculas</b>.</p></div><div class="chain"><span class="bubble">⚛️ ATOM</span><span class="arrow">+</span><span class="bubble">⚛️ ATOM</span><span class="arrow">→</span><span class="bubble">🧬 MOLECULE</span></div></section>
+
+<section class="card" id="substances"><div class="en"><h2>🧪 3. Pure substances and mixtures</h2></div><div class="es hidden"><h2>🧪 3. Sustancias puras y mezclas</h2></div><div class="grid"><div class="tile blue"><span class="icon">💎</span><h3 class="en">Pure substances</h3><h3 class="es hidden">Sustancias puras</h3><p class="en">They consist of <b>one type of matter</b>. Examples: silver and oxygen.</p><p class="es hidden">Están formadas por <b>un solo tipo de materia</b>. Ejemplos: plata y oxígeno.</p></div><div class="tile orange"><span class="icon">🥤</span><h3 class="en">Mixtures</h3><h3 class="es hidden">Mezclas</h3><p class="en">They contain <b>two or more pure substances</b>. They can be homogeneous or heterogeneous. Example: lemonade.</p><p class="es hidden">Contienen <b>dos o más sustancias puras</b>. Pueden ser homogéneas o heterogéneas. Ejemplo: limonada.</p></div></div></section>
+
+<section class="card challenge quiz"><span class="level">LEVEL 1 🟢</span><h2 class="en">Quick Check</h2><h2 class="es hidden">Reto rápido</h2><p class="en"><b>Which definition of matter is correct?</b></p><p class="es hidden"><b>¿Qué definición de materia es correcta?</b></p><div class="answers"><button class="answer" data-ok="0"><span class="en">Anything we can see</span><span class="es hidden">Todo lo que vemos</span></button><button class="answer" data-ok="1"><span class="en">Anything that has mass and occupies space</span><span class="es hidden">Todo lo que tiene masa y ocupa espacio</span></button><button class="answer" data-ok="0"><span class="en">Only solids</span><span class="es hidden">Solo los sólidos</span></button><button class="answer" data-ok="0"><span class="en">Only living things</span><span class="es hidden">Solo los seres vivos</span></button></div><div class="feedback"></div></section>
+
+<section class="card" id="mass"><div class="en"><h2>⚖️ 4. Mass and volume</h2><p>Matter has two fundamental properties: <b>mass</b> and <b>volume</b>.</p></div><div class="es hidden"><h2>⚖️ 4. Masa y volumen</h2><p>La materia tiene dos propiedades fundamentales: <b>masa</b> y <b>volumen</b>.</p></div><div class="grid"><div class="tile orange"><span class="icon">⚖️🍅</span><h3>MASS / MASA</h3><p class="en">The <b>amount of matter</b> in an object. Measured with a <b>balance or kitchen scale</b>.</p><p class="es hidden">La <b>cantidad de materia</b> de un objeto. Se mide con una <b>balanza o báscula de cocina</b>.</p><p><b>g · kg &nbsp; | &nbsp; 1,000 g = 1 kg</b></p></div><div class="tile blue"><span class="icon">🧪💧</span><h3>VOLUME / VOLUMEN</h3><p class="en">The <b>amount of space</b> an object or substance occupies. Measured with a <b>measuring jug or graduated cylinder</b>.</p><p class="es hidden">La <b>cantidad de espacio</b> que ocupa un objeto o sustancia. Se mide con una <b>jarra medidora o probeta graduada</b>.</p><p><b>ml · l &nbsp; | &nbsp; 1,000 ml = 1 l</b></p></div></div></section>
+
+<section class="card challenge quiz"><span class="level">LEVEL 2 🔵</span><h2 class="en">Mass or Volume?</h2><h2 class="es hidden">¿Masa o volumen?</h2><p class="en"><b>You use a graduated cylinder. What are you measuring?</b></p><p class="es hidden"><b>Usas una probeta graduada. ¿Qué estás midiendo?</b></p><div class="answers"><button class="answer" data-ok="0">⚖️ Mass / Masa</button><button class="answer" data-ok="0">🌍 Weight / Peso</button><button class="answer" data-ok="1">🧪 Volume / Volumen</button><button class="answer" data-ok="0">⚛️ Atoms / Átomos</button></div><div class="feedback"></div></section>
+
+<section class="card" id="gravity"><div class="en"><h2>🌍 5. Weight and gravity</h2><div class="def"><b>Weight</b> is the measure of the <b>force of gravity</b> on matter.</div><p>On Earth, gravity is greater than on the Moon. That is why an astronaut weighs less on the Moon.</p></div><div class="es hidden"><h2>🌍 5. Peso y gravedad</h2><div class="def">El <b>peso</b> es la medida de la <b>fuerza de la gravedad</b> sobre la materia.</div><p>En la Tierra la gravedad es mayor que en la Luna. Por eso un astronauta pesa menos en la Luna.</p></div><div class="grid"><div class="tile blue" style="text-align:center"><span class="icon">🌍</span><b>EARTH / TIERRA</b><p class="en">Greater gravity → greater weight</p><p class="es hidden">Mayor gravedad → mayor peso</p></div><div class="tile purple" style="text-align:center"><span class="icon">🌙👨‍🚀</span><b>MOON / LUNA</b><p class="en">Less gravity → less weight</p><p class="es hidden">Menor gravedad → menor peso</p></div></div></section>
+
+<section class="card challenge quiz"><span class="level">LEVEL 3 🟠</span><h2 class="en">Think like a scientist 🧠</h2><h2 class="es hidden">Piensa como un científico 🧠</h2><p class="en"><b>An astronaut travels from Earth to the Moon. What happens?</b></p><p class="es hidden"><b>Un astronauta viaja de la Tierra a la Luna. ¿Qué ocurre?</b></p><div class="answers"><button class="answer" data-ok="0"><span class="en">The astronaut weighs more</span><span class="es hidden">El astronauta pesa más</span></button><button class="answer" data-ok="0"><span class="en">Gravity becomes stronger</span><span class="es hidden">La gravedad aumenta</span></button><button class="answer" data-ok="0"><span class="en">Nothing changes</span><span class="es hidden">No cambia nada</span></button><button class="answer" data-ok="1"><span class="en">The astronaut weighs less</span><span class="es hidden">El astronauta pesa menos</span></button></div><div class="feedback"></div></section>
+
+<section class="card challenge" id="final"><span class="level">LEVEL 4 🔴 · FINAL MISSION</span><h2 class="en">🏆 Matter Master Challenge</h2><h2 class="es hidden">🏆 Reto Maestro de la Materia</h2><div class="progress"><div class="bar" id="bar"></div></div><div id="fq"></div><div class="feedback" id="ff"></div></section>
+<div class="footer">🌿 Year 6 Natural Science · LS1 · Session 1 · Mr. Ríos</div>
+</main>
+<script>
+let L='en',N=0;
+function go(id){document.getElementById(id).scrollIntoView({behavior:'smooth',block:'start'})}
+const Q=[
+{en:'Matter is made up of tiny particles called…',es:'La materia está formada por partículas diminutas llamadas…',a:['molecules','atoms','litres','grams'],ok:1},
+{en:'Which pair is used to measure mass?',es:'¿Qué pareja se usa para medir la masa?',a:['ml and l','g and kg','atoms and molecules','Earth and Moon'],ok:1},
+{en:'Which is an example of a mixture from this lesson?',es:'¿Cuál es un ejemplo de mezcla de esta sesión?',a:['silver','oxygen','lemonade','an atom'],ok:2},
+{en:'A substance occupies 500 ml. Which property is this?',es:'Una sustancia ocupa 500 ml. ¿Qué propiedad es?',a:['weight','mass','gravity','volume'],ok:3},
+{en:'Why does an astronaut weigh less on the Moon?',es:'¿Por qué pesa menos un astronauta en la Luna?',a:['There is less gravity','It has no matter','There is more gravity','Litres become kilograms'],ok:0}
+];
+function lang(l){L=l;document.querySelectorAll('.en').forEach(e=>e.classList.toggle('hidden',l!='en'));document.querySelectorAll('.es').forEach(e=>e.classList.toggle('hidden',l!='es'));render()}
+function size(s){document.body.className=s}
+document.querySelectorAll('.quiz .answer').forEach(b=>b.onclick=()=>{let f=b.closest('.quiz').querySelector('.feedback');if(b.dataset.ok==='1'){b.classList.add('correct');f.textContent=L==='en'?'✓ Correct! Great job!':'✓ ¡Correcto! ¡Muy bien!'}else{b.classList.add('wrong');f.textContent=L==='en'?'✗ Try again!':'✗ ¡Inténtalo de nuevo!';setTimeout(()=>b.classList.remove('wrong'),600)}})
+function render(){let x=document.getElementById('fq'),f=document.getElementById('ff');if(N>=Q.length){x.innerHTML='<div class="def" style="text-align:center;font-size:1.3em">🏆🎉<br><b>'+(L==='en'?'MISSION COMPLETE!':'¡MISIÓN COMPLETADA!')+'</b></div>';document.getElementById('bar').style.width='100%';return}let q=Q[N];x.innerHTML='<p><b>'+(N+1)+'/5 · '+q[L]+'</b></p><div class="answers">'+q.a.map((a,i)=>'<button class="answer" onclick="fa('+i+',this)">'+a+'</button>').join('')+'</div>';document.getElementById('bar').style.width=(N*20)+'%';f.textContent=''}
+function fa(i,b){let f=document.getElementById('ff');if(i===Q[N].ok){b.classList.add('correct');f.textContent=L==='en'?'✓ Correct! Next challenge…':'✓ ¡Correcto! Siguiente reto…';setTimeout(()=>{N++;render()},650)}else{b.classList.add('wrong');f.textContent=L==='en'?'✗ Try again!':'✗ ¡Inténtalo de nuevo!';setTimeout(()=>b.classList.remove('wrong'),600)}}
+render();
+</script></body></html>
